@@ -1,0 +1,26 @@
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: startercode2_web
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "3000:3000"
+    networks:
+      - webnet
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+networks:
+  webnet:
