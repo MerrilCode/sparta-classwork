@@ -15,3 +15,7 @@
 `docker rm $(docker ps -aq)` removes all containers
 
 `docker rmi $(docker images -q)` removes all images
+`docker-compose run web any_command` runs the command and shutsdown
+`docker-compose web bash` runs the bash script
+
+merril:$apr1$h5cLtYeV$JUeyZiUeQewSF9sx2JgDZ0
